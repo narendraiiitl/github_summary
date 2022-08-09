@@ -33,7 +33,7 @@ const Home = () => {
         }
         setLoading1(true);
         setLoading2(true);
-        let res = new Array();
+        let res = [];
         await octokit.request("GET /users/{username}", {
             username: username,
         }).then(r => {
@@ -63,7 +63,7 @@ const Home = () => {
                 <Container>
                     {loading2 ? <Spinner animation="border" style={{ marginTop: "2rem" }} /> : loading2}
                     <Row >
-                        {repo.length ? repo.map(data => <Col><Repocard data={data} username={user.login} /> </Col>) : repo}
+                        {repo.length ? repo.map((data,i) => <Col key={i}><Repocard data={data} username={user.login} /> </Col>) : repo}
                     </Row>
 
                     {totalPage > 0 ? <Page page={page} setPage={setPage} totalpages={totalPage} /> : totalPage}

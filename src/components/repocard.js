@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Card, CardBody, CardHeader, Badge,  CardTitle, CardText } from 'reactstrap';
+import { Card, CardBody, CardHeader, Badge, CardTitle, CardText } from 'reactstrap';
 import { Octokit } from "octokit";
 const octokit = new Octokit({})
 function Repocard({ data, username }) {
@@ -13,7 +13,7 @@ function Repocard({ data, username }) {
                 setLanguages(r.data);
             });
         }
-    }, [data,username]);
+    }, [data, username]);
     const lang = () => {
         var nd = [];
         for (const p in languages) {
@@ -21,6 +21,7 @@ function Repocard({ data, username }) {
                 style={{
                     margin: "5px"
                 }}
+                key={p}
                 className="text-dark"
                 color="light"
                 pill

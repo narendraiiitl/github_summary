@@ -8,9 +8,9 @@ import Navbar from 'react-bootstrap/Navbar';
 function InputNavbar({ setUser }) {
     const [data, setData] = useState();
     function handleChange(e) {
-        e.preventDefault();
-        setData(e.target.value);
+        e.preventDefault(); setUser(data)
     }
+
     return (
         <Navbar bg="light" expand="lg" >
             <Container fluid>
@@ -23,21 +23,19 @@ function InputNavbar({ setUser }) {
                         navbarScroll
                     >
                     </Nav>
-                    <Form className="d-flex">
+                    <Form className="d-flex" onSubmit={e => handleChange(e)}>
                         <Form.Control
                             type="search"
                             placeholder="Username"
                             className="me-2"
                             aria-label="Search"
-                            onChange={(e) => handleChange(e)}
-                            onKeyPress={(e => (e.key === "Enter" ? setUser(data) : e))}
-
+                            onChange={(e) => setData(e.target.value)}
                         />
-                        <Button variant="outline-primary" onClick={() => setUser(data)}>Search</Button>
+                        <Button type="button" variant="outline-primary" onClick={() => setUser(data)}>Search</Button>
                     </Form>
                 </Navbar.Collapse>
             </Container>
-        </Navbar>
+        </Navbar >
     );
 }
 
