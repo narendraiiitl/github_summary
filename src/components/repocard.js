@@ -8,18 +8,14 @@ function Repocard({ data, username }) {
     const [languages, setLanguages] = useState([]);
     useEffect(() => {
         if (data) {
-            getLanguages(data);
+            await octokit.request("GET /repos/{user}/{name}/languages", {
+                user: username,
+                name: data.name
+            }).then(r => {
+                setLanguages(r.data);
+            });
         }
     }, [data]);
-    const getLanguages = async (data) => {
-
-        await octokit.request("GET /repos/{user}/{name}/languages", {
-            user: username,
-            name: data.name
-        }).then(r => {
-            setLanguages(r.data);
-        });
-    }
     const lang = () => {
         var nd = [];
         for (const p in languages) {
