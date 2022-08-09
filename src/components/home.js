@@ -21,7 +21,7 @@ const Home = () => {
     const [totalPage, setTotalpage] = useState();
 
     useEffect(() => {
-        if (all.length !== 0 || page !== null) {
+        if (all.length != 0 || page != null) {
             setRepo(all[page].data);
             setLoading2(false);
         }
