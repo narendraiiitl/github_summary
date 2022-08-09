@@ -1,7 +1,6 @@
-import Button from 'react-bootstrap/Button';
 import React, { useEffect, useState } from 'react';
-import { Card, CardBody, CardHeader, Badge, CardFooter, CardTitle, CardText } from 'reactstrap';
-import { Octokit, App } from "octokit";
+import { Card, CardBody, CardHeader, Badge,  CardTitle, CardText } from 'reactstrap';
+import { Octokit } from "octokit";
 const octokit = new Octokit({})
 function Repocard({ data, username }) {
     const [languages, setLanguages] = useState([]);

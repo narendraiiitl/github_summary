@@ -1,6 +1,6 @@
 import Button from 'react-bootstrap/Button';
-import React, { useState } from 'react';
-import { Card, CardBody, CardHeader, CardFooter, CardTitle, CardText } from 'reactstrap';
+import React from 'react';
+import { Card, CardBody,CardTitle, CardText } from 'reactstrap';
 
 function Profile({ user }) {
     return (

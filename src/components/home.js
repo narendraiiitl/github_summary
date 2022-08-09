@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Octokit, App } from "octokit";
+import { Octokit } from "octokit";
 import { Row, Col } from 'reactstrap';
 import Spinner from 'react-bootstrap/Spinner';
 import Page from "./pagination.js";
