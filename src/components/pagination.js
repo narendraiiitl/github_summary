@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import './pagination.css';
 function Page({ page, setPage, totalpages }) {

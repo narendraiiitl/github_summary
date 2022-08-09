@@ -2,7 +2,6 @@ import Button from 'react-bootstrap/Button';
 import React, { useEffect, useState } from 'react';
 import { Card, CardBody, CardHeader, Badge, CardFooter, CardTitle, CardText } from 'reactstrap';
 import { Octokit, App } from "octokit";
-import Spinner from 'react-bootstrap/Spinner';
 const octokit = new Octokit({})
 function Repocard({ data, username }) {
     const [languages, setLanguages] = useState([]);
@@ -15,7 +14,7 @@ function Repocard({ data, username }) {
                 setLanguages(r.data);
             });
         }
-    }, [data]);
+    }, [data,username]);
     const lang = () => {
         var nd = [];
         for (const p in languages) {

@@ -3,9 +3,6 @@ import { Octokit, App } from "octokit";
 import { Row, Col } from 'reactstrap';
 import Spinner from 'react-bootstrap/Spinner';
 import Page from "./pagination.js";
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
 import Container from 'react-bootstrap/Container';
 import Repocard from './repocard.js'
 import InputNavbar from './navbar.js';
@@ -18,14 +15,13 @@ const Home = () => {
     const [repo, setRepo] = useState([]);
     const [all, setAll] = useState([]);
     const [user, setUser] = useState();
-    const [meta, setMeta] = useState();
     const [page, setPage] = useState();
     const [loading1, setLoading1] = useState(false);
     const [loading2, setLoading2] = useState(false);
     const [totalPage, setTotalpage] = useState();
 
     useEffect(() => {
-        if (all.length != 0 || page != null) {
+        if (all.length !== 0 || page !== null) {
             setRepo(all[page].data);
             setLoading2(false);
         }
